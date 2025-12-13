@@ -14,9 +14,8 @@ export default function Home() {
           <h2>AutoVerse</h2>
         </div>
         <nav className="nav">
-          <a href="#features">Explore</a>
-          <a href="#how-it-works">How It Works</a>
-          
+
+        
           <Link to="/login" className="nav-btn">Login</Link>
         </nav>
       </header>
