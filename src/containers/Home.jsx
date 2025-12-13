@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react"; // 👈 Import useState
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
-import logo from "../assets/logo.png"; // ✅ import properly instead of local absolute path
+import logo from "../assets/logo.png";
 import mapImageUrl from "../assets/mapImageUrl.png";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false); // 👈 State for mobile menu visibility
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Function to close the menu when a link is clicked (useful for anchors/Links)
+  const closeMenu = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <div className="universe-container">
       {/* 🧭 HEADER */}
@@ -13,11 +26,20 @@ export default function Home() {
           <img src={logo} alt="Autonomous Universe Logo" className="logo-img" />
           <h2>AutoVerse</h2>
         </div>
-        <nav className="nav">
-          <a href="#features">Explore</a>
-          <a href="#how-it-works">How It Works</a>
+        
+        {/* 🍔 MENU TOGGLE ICON (visible only on mobile via CSS) */}
+        <div className="menu-toggle" onClick={toggleMenu}>
+          {/* Unicode for Hamburger (☰) or Close (✕) */}
+          {isOpen ? '✕' : '☰'} 
+        </div>
+
+        {/* NAV: Added dynamic class based on 'isOpen' state for mobile responsiveness */}
+        <nav className={`nav ${isOpen ? 'nav-open' : ''}`} onClick={closeMenu}>
+          {/* Using closeMenu handler on links/buttons to auto-close menu */}
+          <a href="#features" onClick={closeMenu}>Explore</a>
+          <a href="#how-it-works" onClick={closeMenu}>How It Works</a>
           
-          <Link to="/login" className="nav-btn">Login</Link>
+          <Link to="/login" className="nav-btn" onClick={closeMenu}>Login</Link>
         </nav>
       </header>
 
@@ -90,7 +112,6 @@ export default function Home() {
         <h2>Live Universe Map</h2>
         <p>Visualize real-time networks — from smart farms to digital labs.</p>
         <div className="map-placeholder">
-          {/* UPDATED: Using a dedicated <img> tag */}
           <img 
             src={mapImageUrl} 
             alt="Live Universe Map Visualization" 
