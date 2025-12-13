@@ -1,0 +1,190 @@
+                /* 🌌 AUTONOMOUS UNIVERSE THEME (Adapted for Login) */
+                @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700&family=Orbitron:wght@500;600;700&display=swap');
+
+                /* --- Colors & Variables --- */
+                :root {
+                    --color-primary: #05c77d; /* Highlight Green/Cyan */
+                    --color-accent: #190a92; /* Deep Blue Accent */
+                    --color-glow: rgba(5, 199, 125, 0.4);
+                    --color-background: #030712;
+                    --color-card-bg: rgba(10, 5, 40, 0.8); /* Header background for card */
+                    --color-input-bg: rgba(10, 5, 40, 0.6);
+                    --color-text-light: #d0d0d0;
+                    --color-error: #ef4444;
+                    --color-border: rgba(5, 199, 125, 0.2);
+                }
+
+                /* --- Global & Background --- */
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: "Exo", sans-serif;
+                    color: var(--color-text-light);
+                }
+
+                .min-h-screen {
+                    min-height: 100vh;
+                    background: radial-gradient(circle at top left, #030712, #05091a 60%, #01030a);
+                    display: flex; /* Ensure centering works */
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                /* --- Layout Container (Full Screen Centering) --- */
+                .login-page-container {
+                    width: 100%;
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                /* --- Login Card (Deep Space Console) --- */
+                .login-card {
+                    background-color: var(--color-card-bg);
+                    color: var(--color-text-light);
+                    padding: 3rem;
+                    border-radius: 20px;
+                    box-shadow: 
+                        0 0 30px rgba(0, 0, 0, 0.6), /* Standard shadow */
+                        0 0 15px var(--color-glow); /* Neon outer glow */
+                    width: 100%;
+                    max-width: 420px;
+                    border: 1px solid var(--color-border);
+                    transition: transform 0.4s ease-out, box-shadow 0.4s;
+                    backdrop-filter: blur(12px); /* Frosted effect */
+                }
+
+                .login-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 
+                        0 0 35px rgba(0, 0, 0, 0.7),
+                        0 0 20px rgba(5, 199, 125, 0.6); /* Brighter glow on hover */
+                }
+
+                .login-title {
+                    font-family: "Orbitron", sans-serif;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    color: var(--color-primary);
+                    margin-bottom: 2.5rem;
+                    text-align: center;
+                    text-shadow: 0 0 10px rgba(5, 199, 125, 0.5); /* Title glow */
+                    letter-spacing: 1px;
+                }
+
+                /* --- Form and Inputs --- */
+                .login-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+
+                .input-group label {
+                    display: block;
+                    font-size: 0.85rem;
+                    font-weight: 400;
+                    margin-bottom: 0.4rem;
+                    color: #999; /* Muted label */
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+
+                .login-input {
+                    width: 100%;
+                    padding: 1rem 1rem;
+                    border-radius: 10px;
+                    border: 1px solid var(--color-border);
+                    background-color: var(--color-input-bg);
+                    color: var(--color-text-light);
+                    font-size: 1rem;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .login-input::placeholder {
+                    color: #4A4A6B; /* Placeholder */
+                }
+
+                .login-input:focus {
+                    outline: none;
+                    border-color: var(--color-primary);
+                    box-shadow: 0 0 0 3px rgba(5, 199, 125, 0.3);
+                }
+
+                /* --- Button (Primary Gradient Style) --- */
+                .login-button {
+                    width: 100%;
+                    padding: 14px;
+                    margin-top: 1.5rem;
+                    border: none;
+                    border-radius: 30px; /* Pill shape */
+                    
+                    /* Primary Gradient from Universe Theme */
+                    background: linear-gradient(180deg, #040a94, #190a92); 
+                    
+                    color: white;
+                    font-weight: 600;
+                    font-size: 1.05rem;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    font-family: "Orbitron", sans-serif;
+                }
+
+                .login-button:hover {
+                    transform: scale(1.03);
+                    /* Neon shadow effect from the Universe theme */
+                    box-shadow: 0 0 18px rgba(5, 199, 125, 0.6); 
+                }
+
+                .login-button:active {
+                    transform: scale(0.98);
+                }
+
+                /* --- Error and Misc --- */
+                .auth-error {
+                    background-color: rgba(255, 0, 0, 0.1); 
+                    color: var(--color-error);
+                    border: 1px solid var(--color-error);
+                    padding: 0.75rem;
+                    border-radius: 10px;
+                    font-size: 0.875rem;
+                    text-align: center;
+                    margin-top: -0.5rem; /* Pull up closer to inputs */
+                }
+
+                .forgot-password {
+                    margin-top: 1.5rem;
+                    text-align: center;
+                    font-size: 0.875rem;
+                }
+
+                .forgot-password a {
+                    color: var(--color-primary);
+                    text-decoration: none;
+                    transition: color 0.3s;
+                }
+
+                .forgot-password a:hover {
+                    color: white;
+                    text-decoration: underline;
+                    text-shadow: 0 0 5px var(--color-primary);
+                }
+
+                /* --- Loading Indicator --- */
+                .loading-indicator {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: var(--color-primary);
+                    font-family: "Orbitron", sans-serif;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    text-shadow: 0 0 10px var(--color-primary);
+                    animation: pulse 1s infinite alternate;
+                }
+
+                @keyframes pulse {
+                    from { opacity: 0.6; }
+                    to { opacity: 1; }
+                }

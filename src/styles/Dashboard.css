@@ -1,0 +1,389 @@
+    /* 🌌 AUTONOMOUS UNIVERSE THEME - CONSISTENT DASHBOARD */
+    @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700&family=Orbitron:wght@500;600;700&display=swap');
+
+    :root {
+      /* New Colors for Consistency */
+      --color-primary: #05c77d; 
+      --color-accent: #190a92; 
+      --color-danger: #ff5e7d; 
+      --color-success: #05c77d; 
+      --color-background: #01030a;
+      --color-card-bg: rgba(10, 5, 40, 0.7); /* Matching header background */
+      --color-border: rgba(5, 199, 125, 0.2);
+      --color-text: #ffffff;
+      --color-text-dim: #cfcfcf;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .universe-container {
+      font-family: "Exo", sans-serif;
+      color: var(--color-text);
+      /* Matching gradient from previous theme */
+      background: radial-gradient(circle at top left, #030712, #05091a 60%, #01030a);
+      min-height: 100vh;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* ========== HEADER (Fixed top bar, adapted from user theme) ========== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 30px; /* Adjusted padding */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 5, 40, 0.9); /* Opaque background for fixed header */
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--color-border);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    .logo-title {
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      color: var(--color-primary);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(5, 199, 125, 0.4);
+      font-family: "Orbitron", sans-serif;
+      margin: 0;
+    }
+    
+    .highlight-text {
+      color: white;
+      text-shadow: none; /* Already defined in logo-title */
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .user-id-display {
+      font-size: 0.85rem;
+      color: var(--color-text-dim);
+      background: rgba(25, 25, 25, 0.7);
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-family: monospace;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .nav-btn.btn-logout {
+      padding: 10px 20px;
+      background: linear-gradient(180deg, #d32f2f, #a00707); /* Using danger colors */
+      border-radius: 25px;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-family: "Exo", sans-serif;
+    }
+    
+    .nav-btn.btn-logout:hover {
+        transform: scale(1.05);
+        background: linear-gradient(180deg, #ff5e7d, #d32f2f);
+        box-shadow: 0 0 12px rgba(255, 77, 77, 0.8);
+    }
+    
+    /* ========== CONTENT AREA (Offset for fixed header) ========== */
+    .dashboard-content-area {
+        padding: 100px 30px 60px 30px; /* Space for fixed header + dashboard padding */
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ========== SECTION HEADINGS ========== */
+    .dashboard-section {
+      margin-bottom: 60px;
+    }
+
+    .dashboard-section h2 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-left: 4px solid var(--color-primary);
+      padding-left: 20px;
+      text-shadow: 0 0 8px rgba(5, 199, 125, 0.3); /* Using new primary color for glow */
+    }
+    
+    .section-icon {
+        color: var(--color-primary);
+        text-shadow: 0 0 8px var(--color-primary);
+    }
+
+    /* ========== CARD GRID LAYOUT ========== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      margin-bottom: 35px;
+    }
+
+    /* ========== CARD STYLES (RELAY & SENSOR) ========== */
+    .card-item {
+      background: var(--color-card-bg);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.9),
+        0 0 18px rgba(5, 199, 125, 0.1) inset; /* Using new primary color for glow */
+      transition: all 0.4s ease-out;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+    }
+
+    .card-item:hover {
+      transform: scale(1.03) translateY(-4px); 
+      border-color: var(--color-primary);
+      box-shadow: 
+        0 0 35px rgba(5, 199, 125, 0.4), /* Using new primary color for glow */
+        0 10px 40px rgba(0, 0, 0, 1.0);
+    }
+    
+    .card-title {
+        font-family: "Orbitron", sans-serif;
+        font-size: 1.4rem;
+        color: white;
+        margin: 0 0 18px 0;
+        border-bottom: 2px solid rgba(5, 199, 125, 0.2); /* Using new primary color */
+        padding-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); 
+    }
+
+    /* --- Status Display --- */
+    .status-display {
+      font-size: 1.05rem;
+      color: var(--color-text-dim);
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .status-on {
+      color: var(--color-success);
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--color-success), 0 0 15px rgba(5, 199, 125, 0.8);
+    }
+
+    .status-off {
+      color: var(--color-danger);
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--color-danger);
+    }
+
+    /* --- Relay Card Button --- */
+    .card-button {
+      padding: 14px 25px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: "Orbitron", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      width: 100%;
+    }
+
+    .button-active {
+      /* Plasma gradient using new colors */
+      background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+      color: white;
+      box-shadow: 0 0 20px rgba(5, 199, 125, 0.9);
+    }
+
+    .button-active:hover {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 6px 25px rgba(5, 199, 125, 1);
+    }
+    
+    .button-inactive {
+        background: var(--color-accent);
+        color: var(--color-text);
+        border: 1px solid var(--color-text-dim);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.2) inset;
+    }
+
+    .button-inactive:hover {
+        background: #0d0638;
+        border-color: var(--color-primary);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    /* --- Sensor Card Values --- */
+    .sensor-card {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .sensor-value {
+        font-family: "Orbitron", sans-serif;
+        line-height: 1;
+        margin: 0;
+        padding-top: 10px;
+    }
+
+    .value-number {
+        font-size: 5rem;
+        font-weight: 700;
+        color: white;
+        /* Ultimate glow effect using new color */
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.8), 
+            0 0 30px var(--color-primary), 
+            0 0 50px rgba(5, 199, 125, 0.9);
+        transition: color 0.5s;
+    }
+
+    .value-unit {
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        margin-left: 8px;
+        font-weight: 500;
+    }
+
+    .value-number.loading {
+        font-size: 1.2rem;
+        color: var(--color-text-dim);
+        text-shadow: none;
+        font-family: "Exo", sans-serif;
+        letter-spacing: 1px;
+    }
+
+    /* ========== ACTION BUTTONS (Danger Red) ========== */
+    .btn-danger-action {
+      padding: 18px 35px;
+      border-radius: 35px;
+      border: none;
+      background: linear-gradient(180deg, #d32f2f, #a00707);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: "Orbitron", sans-serif;
+      margin-top: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+    }
+
+    .btn-danger-action:hover {
+      transform: scale(1.02);
+      background: linear-gradient(180deg, #ff5e7d, #d32f2f);
+      box-shadow: 0 0 30px rgba(255, 94, 125, 1);
+    }
+
+    /* --- Loading Indicator --- */
+    .loading-indicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--color-primary);
+      font-family: "Orbitron", sans-serif;
+      font-size: 2rem;
+      text-align: center;
+      text-shadow: 0 0 15px var(--color-primary), 0 0 30px rgba(5, 199, 125, 0.8);
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+        from { opacity: 0.7; }
+        to { opacity: 1; }
+    }
+
+
+    /* ========== RESPONSIVENESS ========== */
+    @media (max-width: 900px) {
+      .dashboard-content-area {
+        padding: 100px 20px 60px 20px;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+      .nav {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+      }
+      .user-id-display {
+        max-width: 100%;
+        overflow: auto;
+        white-space: normal;
+        word-break: break-all;
+      }
+      .logo-title {
+        font-size: 1.6rem;
+      }
+      .dashboard-section h2 {
+        font-size: 1.6rem;
+      }
+      .card-item {
+        min-height: 180px;
+      }
+      .value-number {
+        font-size: 4rem;
+      }
+      .nav-btn.btn-logout {
+        width: 100%;
+      }
+    }
+    @media (max-width: 550px) {
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+        .logo-title {
+            font-size: 1.4rem;
+        }
+        .dashboard-section h2 {
+            font-size: 1.3rem;
+        }
+        .value-number {
+            font-size: 3rem;
+        }
+        .value-unit {
+            font-size: 1.2rem;
+        }
+        .card-title {
+            font-size: 1.2rem;
+        }
+    }

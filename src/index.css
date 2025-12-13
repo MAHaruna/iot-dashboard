@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.relay-card {
+  display: inline-block;
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+}
+
+.relay-card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* === Dashboard === */
+.dashboard h1 {
+  margin-bottom: 20px;
+}
+
+.relay-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.relay-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.relay-card h2 {
+  margin-bottom: 8px;
+}
+
+.relay-card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* "All OFF" button */
+.dashboard button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #d32f2f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dashboard button:hover {
+  opacity: 0.85;
+}
+
+/* === Auth (Login) === */
+.auth-card {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.auth-form input:focus {
+  border-color: #1e88e5;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #1e88e5;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: #1565c0;
+}
+
+.auth-error {
+  color: red;
+  font-size: 0.9rem;
+  margin: 8px 0;
+  text-align: center;
+}
