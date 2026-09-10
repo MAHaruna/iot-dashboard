@@ -24,7 +24,7 @@ export default function Home() {
       <header className="header">
         <div className="logo">
           <img src={logo} alt="Autonomous Universe Logo" className="logo-img" />
-          <h2>AutoVerse</h2>
+          <h2>AgroSense IoT</h2>
         </div>
         
         {/* 🍔 MENU TOGGLE ICON (visible only on mobile via CSS) */}
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="bg-animation"></div>
         <div className="hero-content fade-in">
           <h1>
-            Welcome to the <span className="highlight">Autonomous Universe</span>
+            Welcome to the <span className="highlight">AgroSense IoT</span>
           </h1>
           <p>
             Explore self-evolving systems where <strong>humans</strong>, <strong>machines</strong>, 
