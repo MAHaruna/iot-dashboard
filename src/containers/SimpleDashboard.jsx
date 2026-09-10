@@ -103,7 +103,7 @@ export default function SimpleDashboard() {
       {/* HEADER */}
       <header className="header">
         <h1 className="logo-title">
-          AutoVerse <span className="highlight-text">Smart Farm</span>
+          AgroSense IoT <span className="highlight-text">Smart Farm</span>
         </h1>
         <nav className="nav">
           <button
